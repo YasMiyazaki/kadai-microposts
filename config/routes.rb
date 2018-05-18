@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  
+  #課題：Micropost のお気に入り機能
+  resources :likes, only: [:show, :create, :destroy]
 end

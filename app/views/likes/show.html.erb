@@ -1,6 +1,7 @@
-<ul class="media-list">
-  <% microposts.each do |micropost| %>
-    <li class="media">
+<h1>My Favorites</h1>
+  <ul class="media-list">
+  <% @microposts.each do |micropost| %>
+  <li class="media">
       <div class="media-left">
         <img class="media-object img-rounded" src="<%= gravatar_url(micropost.user, options = { size: 50 }) %>" alt="">
       </div>
@@ -16,9 +17,7 @@
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
           <%= render 'likes/like_button', micropost: micropost %>	
-	        </div>
+        </div>
       </div>
     </li>
   <% end %>
-  <%= paginate microposts %>
-</ul>
